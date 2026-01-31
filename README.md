@@ -1,6 +1,6 @@
 # Projet : Réseau de Distribution d'Électricité 
 
-##Auteurs      BEDAD YASMINE      YOUSFI INES
+## Auteurs      BEDAD YASMINE      YOUSFI INES
 
 ## Description du projet:
 
@@ -106,3 +106,4 @@ L'algorithme améliore le réseau en combinant plusieurs stratégies simples mai
 - À la fin, la meilleure configuration trouvée parmi tous les démarrages est conservée comme résultat final.
 
 Cette approche est une amélioration du pseudo-code naïf, qui ne faisait que modifier aléatoirement les connexions à partir d'une seule solution initiale. Le glouton initial et les multi-démarrages permettent d'explorer l'espace des solutions plus efficacement et d'éviter les minima locaux.
+
