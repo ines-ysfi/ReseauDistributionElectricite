@@ -7,10 +7,10 @@
 Ce projet Java simule un réseau électrique simple et intelligent qui permet de :
 
 *Représenter un ensemble de générateurs (avec leurs noms et leurs capacité en kW)  et un ensemble de maisons (noms et type de consommation : BASSE (10Kw), NORMAL (20Kw), FORTE (40Kw)) ainsi que les connexions entre ces générateurs et ces maisons  
-*Calculer le cout global d’un réseau  composé de deux parties :
+*Calculer le cout global d'un réseau  composé de deux parties :
  Coût = Dispersion + (λ × Surcharge)
 Dispersion : Écart entre le taux d'utilisation des générateurs                                                            Surcharge : Pénalité quand un générateur dépasse sa capacité maximale
-*Proposer une meilleure architecture pour ce réseau à fin de démineur le cout globale et essayer  d’assurer l’équilibre entre  les sources et les consommateurs d’une manière automatique en se basant sur un algorithme simple et bien précis.
+*Proposer une meilleure architecture pour ce réseau à fin de démineur le cout globale et essayer  d'assurer l'équilibre entre  les sources et les consommateurs d'une manière automatique en se basant sur un algorithme simple et bien précis.
  
  **Fonctionnalités implémentées **
  
@@ -39,7 +39,7 @@ une interface graphique qui propose la configuration du réseau en ses deux mani
  
  **Structure du projet**
  
- 
+```
  ProjetPAA/
 ├── src/
 |   ├── Application/
@@ -74,8 +74,9 @@ une interface graphique qui propose la configuration du réseau en ses deux mani
 |── Files.txt                                #fichiers des instances 
 |
 └── README.md                                # Ce fichier
+```
   **Mode d'execution**
-  Le projet propose deux points d’entrée pour l’exécution du programme. Le premier permet une utilisation via une interface textuelle en ligne de commande, tandis que le second lance une interface graphique développée avec JavaFX. Ces deux interfaces utilisent les mêmes classes de gestion du réseau et le même algorithme d’optimisation
+  Le projet propose deux points d'entrée pour l'exécution du programme. Le premier permet une utilisation via une interface textuelle en ligne de commande, tandis que le second lance une interface graphique développée avec JavaFX. Ces deux interfaces utilisent les mêmes classes de gestion du réseau et le même algorithme d'optimisation
   
  **la classe  pour exécuter le programme en utlisant l'interface textuelle** est test.Main 
  Deux façons pour lancer le programme 
@@ -99,14 +100,9 @@ JUnit framework de tests
 L'algorithme améliore le réseau en combinant plusieurs stratégies simples mais efficaces :
 
 - Il effectue plusieurs démarrages indépendants pour explorer différentes configurations.
-- Le premier démarrage utilise une solution gloutonne :pour chaque maison, l’algorithme teste sa connexion avec les différents générateurs et choisit à chaque fois celui qui améliore immédiatement le coût du réseau  pour obtenir rapidement une base de bonne qualité
+- Le premier démarrage utilise une solution gloutonne :pour chaque maison, l'algorithme teste sa connexion avec les différents générateurs et choisit à chaque fois celui qui améliore immédiatement le coût du réseau  pour obtenir rapidement une base de bonne qualité
 - À partir de chaque solution, l'algorithme modifie aléatoirement les connexions entre maisons et générateurs, et ne conserve que les changements qui diminuent le coût total.
 - Les démarrages suivants partent de solutions entièrement aléatoires, et la même amélioration locale est appliquée.
 - À la fin, la meilleure configuration trouvée parmi tous les démarrages est conservée comme résultat final.
 
-Cette approche est une amélioration du pseudo-code naïf, qui ne faisait que modifier aléatoirement les connexions à partir d’une seule solution initiale. Le glouton initial et les multi-démarrages permettent d’explorer l’espace des solutions plus efficacement et d’éviter les minima locaux.
-
-
-
-
- 
+Cette approche est une amélioration du pseudo-code naïf, qui ne faisait que modifier aléatoirement les connexions à partir d'une seule solution initiale. Le glouton initial et les multi-démarrages permettent d'explorer l'espace des solutions plus efficacement et d'éviter les minima locaux.
